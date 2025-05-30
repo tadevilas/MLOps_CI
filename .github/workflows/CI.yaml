@@ -3,28 +3,29 @@ name: CI workflow
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
-    - main
+    branches:
+      - main  # This was incorrectly structured in your original YAML
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/Checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2  # lowercase "checkout"
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.9'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
 
-    - name: Install dependencies
-      run: |   
-        python -m pip istall -upgrade pip 
-        pip install pytest streamlit
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip  # 'install' was misspelled
+          pip install pytest streamlit
 
-    - name: Run tests
-      run: |
-        pytest _test.py
+      - name: Run tests
+        run: |
+          pytest _test.py
