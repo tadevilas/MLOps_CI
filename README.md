@@ -1,6 +1,10 @@
 # MLOps_CI
 This Repo is for Continuous Integration 
 
+Check out the live app here:  
+[Streamlit App](https://mlopsci-untxtbc5wslzknnb5wpuxz.streamlit.app/)
+
+
 # 🚀 CI Workflow for Python Project
 
 This repository demonstrates a basic **Continuous Integration (CI)** pipeline using **GitHub Actions** for a Python project. The workflow is triggered on every push and pull request to the `main` branch and automatically runs tests using `pytest`.
